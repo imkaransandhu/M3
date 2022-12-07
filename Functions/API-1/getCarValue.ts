@@ -1,6 +1,6 @@
 const letterToNumbers = require("./letterToNumber");
 
-const getCarValue = (name: string, year: number): any => {
+const getCarValue = (name: string, year: number): string | number => {
   // Checking if the year is negative
   if (year < 0) {
     return "Year can't be negative";

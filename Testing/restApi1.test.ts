@@ -37,32 +37,13 @@ const testCases: {
   },
 ];
 
-// let scenario: {
-//   name: string;
-//   input: any[];
-//   expected: string | number;
-// };
-
-// scenario = {
-//   name: "one",
-//   input: ["Honda", "2005"],
-//   expected: "Year must be a number",
-// };
-
-describe("sum tests", () => {
+describe("API - 1 Testing (car name and year to get value of car)", () => {
   testCases.map((ts) => {
     it(ts.scenario, () => {
       // Act
-      const actual: number = getCarValue(ts.input[0], ts.input[1]);
+      const actual: number | string = getCarValue(ts.input[0], ts.input[1]);
       // Assert
       expect(actual).toBe(ts.expected);
     });
   });
-
-  // it(scenario.name, () => {
-  //   // Act
-  //   const actual: number = getCarValue(scenario.input[0], scenario.input[1]);
-  //   // Assert
-  //   expect(actual).toBe(scenario.expected);
-  // });
 });

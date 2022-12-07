@@ -5,6 +5,7 @@ const env = require("dotenv");
 env.config();
 
 import carValue from "./Controllers/carValue";
+import riskRating from "./Controllers/riskRating";
 
 const PORT = process.env.PORT || "3002";
 
@@ -17,3 +18,5 @@ server.get("/", (req: any, res: any) => {
 });
 
 server.post("/api1", carValue);
+
+server.post("/api2", riskRating);

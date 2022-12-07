@@ -1,6 +1,9 @@
 import getCarValue from "./../Functions/API-1/getCarValue";
 
-const carValue = (req: any, res: any) => {
+const carValue = (
+  req: { body: { carName: string; year: number } },
+  res: { json: (arg0: string | number) => void }
+) => {
   let carName: string; // car name or model
   let year: number; // car year in number only
   let carValue: number | string; // car value
