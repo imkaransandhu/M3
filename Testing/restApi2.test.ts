@@ -1,9 +1,10 @@
 import getDriverRating from "../Functions/API-2/getDriverRating";
 
+// Positive test cases
 const testCases: {
   scenario: string;
   input: string;
-  expected: number | string;
+  expected: number;
 }[] = [
   {
     scenario: "test case 1",
@@ -37,15 +38,53 @@ const testCases: {
   },
 ];
 
+// Negative test cases
+const errorTestCases: {
+  scenario: string;
+  input: any;
+  expected: string;
+}[] = [
+  {
+    scenario: "test case null",
+    input: null,
+    expected: "invalid data type",
+  },
+  {
+    scenario: "test case undefined",
+    input: undefined,
+    expected: "invalid data type",
+  },
+  {
+    scenario: "test case boolean true",
+    input: true,
+    expected: "invalid data type",
+  },
+  {
+    scenario: "test case boolean false",
+    input: false,
+    expected: "invalid data type",
+  },
+  {
+    scenario: "test case number",
+    input: 323232,
+    expected: "invalid data type",
+  },
+];
+
+// testing
 describe("API - 2 Testing (claimHistory to driver rating)", () => {
+  // Positive Test cases
   testCases.map((ts) => {
     it(ts.scenario, () => {
-      // Act
-      testCases.map((ts) => {
-        const actual: number | string = getDriverRating(ts.input);
-        // Assert
-        expect(actual).toBe(ts.expected);
-      });
+      const actual: number = getDriverRating(ts.input); // Act
+      expect(actual).toBe(ts.expected); // Assert
+    });
+  });
+
+  // Negative test cases
+  errorTestCases.map((testCase) => {
+    it(testCase.scenario, () => {
+      expect(() => getDriverRating(testCase.input)).toThrow(testCase.expected); // Assert
     });
   });
 });

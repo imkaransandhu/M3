@@ -235,6 +235,7 @@ function letterToNumber(letter: string): number | undefined {
     //  return 1("-..-. ");
     //   break;
     default:
+      return 0;
       break;
   }
 }

@@ -7,7 +7,6 @@ const riskRating = (
   let claimHistory: string; // car name or model
   let driverRating: number | string; // car value
   claimHistory = req.body.claimHistory; // Assigning the values from the body
-
   driverRating = getDriverRating(claimHistory); // getting the car value from name and year
   res.json(driverRating); // Sending the car value
 };

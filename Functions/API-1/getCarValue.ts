@@ -1,16 +1,6 @@
 const letterToNumbers = require("./letterToNumber");
 
-const getCarValue = (name: string, year: number): string | number => {
-  // Checking if the year is negative
-  if (year < 0) {
-    return "Year can't be negative";
-  }
-
-  // Checking if the year is (nan)not a number
-  if (typeof year != "number") {
-    return "Year must be a number";
-  }
-
+const getCarValue = (name: string, year: number): number => {
   let carName: string; // variable to store name of car
   let carYear: number; // variable to store year of car
   let carNameLetterArray: string[]; // Array for name of car letters
@@ -18,18 +8,33 @@ const getCarValue = (name: string, year: number): string | number => {
   let carNameValue: number; // the value of car name only
   let carValue: number; // Final value of car
 
-  // If name parameter is a number
-  typeof name === "number" ? (carName = String(name)) : (carName = name);
-
-  // Assigning year value
-  carYear = year;
-
   // Checking if the year is (nan)not a number
-  if (typeof carYear != "number") {
-    return "Year must be a number";
+  if (typeof year != "number") {
+    throw new Error("Year must be a number");
   }
 
+  // Checking if the year is negative
+  if (year < 1) {
+    throw new Error("Year can't be negative or less than 1");
+  }
+
+  // If name parameter is a number
+  typeof name === "number" && (name = String(name));
+
+  //if car name data type is not a string.
+  if (typeof name !== "string") {
+    throw new Error("Invalid car name data type");
+  }
+
+  carName = name; // Assigning car name
+  carYear = year; // Assigning year value
+
   carName = carName.replace(/\s+/g, ""); // removing white spaces
+
+  if (carName === "") {
+    throw new Error("Car Name can't be empty");
+  }
+
   carName = carName.toUpperCase(); // change all word to upper case
   carNameLetterArray = carName.split(""); // convert the word into array of letters
 

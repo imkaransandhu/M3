@@ -1,13 +1,11 @@
-import { type } from "os";
-
-const getDriverRating = (claimHistory: string): number | string => {
+const getDriverRating = (claimHistory: string): number => {
   let driverRating: number; // rating of driver (1 - 5)
   let occurrences: number; // number of occurrences of words
   let driverHistory: string; // history of driver
   let occurrencesArray: string[]; //Occurrences to check
 
   if (typeof claimHistory !== "string") {
-    return "The input type is not supported, only string values are supported";
+    throw new Error("invalid data type");
   }
 
   occurrences = 0; // Occurrences in the starting
