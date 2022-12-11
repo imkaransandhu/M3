@@ -52,19 +52,19 @@ const errorTestCases: {
     expected: "Year must be a number",
   },
   {
-    scenario: "scenario - cra name as a boolean data type",
-    input: [false, "2005"],
-    expected: "Year must be a number",
+    scenario: "scenario - car name as a boolean data type",
+    input: [false, 2005],
+    expected: "Invalid car name data type",
   },
   {
     scenario: "scenario - car name is undefined",
-    input: [undefined, "2005"],
-    expected: "Year must be a number",
+    input: [undefined, 2005],
+    expected: "Invalid car name data type",
   },
   {
     scenario: "scenario -  car name is null",
-    input: [null, "2005"],
-    expected: "Year must be a number",
+    input: [null, 2005],
+    expected: "Invalid car name data type",
   },
   {
     scenario: "scenario - year is null",

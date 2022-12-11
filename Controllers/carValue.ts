@@ -9,6 +9,12 @@ const carValue = (
   let carValue: number | string; // car value
   ({ carName, year } = req.body); // Assigning the values from the body
 
+  console.log(typeof year);
+
+  if (typeof year === "string") {
+    year = Number(year);
+  }
+
   carValue = getCarValue(carName, year); // getting the car value from name and year
   res.json(carValue); // Sending the car value
 };

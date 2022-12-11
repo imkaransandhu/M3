@@ -2,10 +2,11 @@
   "name": "fifa",
   "version": "1.0.0",
   "description": "",
-  "main": "index.tsx",
+  "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.ts",
-    "test": "jest --verbose"
+    "build": "npx tsc",
+    "start": "node dist/index.js",
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\""
   },
   "author": "Karan Singh",
   "license": "ISC",
