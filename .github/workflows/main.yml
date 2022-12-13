@@ -28,7 +28,7 @@ jobs:
         npm install
         npm run start --if-present
         npm run test --if-present
-      working-directory: "/dist"
+      working-directory: "/m3-backend"
     - name: 'Deploy to Azure WebApp'
       uses: azure/webapps-deploy@v2
       with: 
