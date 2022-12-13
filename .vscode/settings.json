@@ -1,4 +1,6 @@
 {
   "cSpell.words": ["FIFA", "Kewal"],
-  "typescript.tsdk": "node_modules\\typescript\\lib"
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "appService.defaultWebAppToDeploy": "/subscriptions/540bfec7-08fa-4973-b0aa-f52de723aeaf/AppServices/subscriptions/540bfec7-08fa-4973-b0aa-f52de723aeaf/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/turner-quotes",
+  "appService.deploySubpath": "."
 }
