@@ -34,7 +34,7 @@ const testCases: {
   {
     scenario: "test case 6",
     input: "crashcrashcrashcrashcrashcrashcrash ",
-    expected: 5,
+    expected: 4,
   },
 ];
 
