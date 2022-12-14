@@ -21,11 +21,11 @@ server.listen(PORT, () => {
 
 // Simple API
 server.get("/", (req: any, res: { send: (arg0: string) => void }) => {
-  res.send("Welcome to the Turners Quotes");
+  res.send("Welcome to the Turner Quotation Platform");
 });
 
 // API - 1 car name and year to car value
-server.post("/api1", carValue);
+server.post("/getcarvalue", carValue);
 
 // API - 2 driver claimHistory to riskRating
-server.post("/api2", riskRating);
+server.post("/getriskrating", riskRating);
