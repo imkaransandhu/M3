@@ -21,7 +21,7 @@ server.listen(PORT, () => {
 
 // Simple API
 server.get("/", (req: any, res: { send: (arg0: string) => void }) => {
-  res.send("Welcome to the Turner Quotation Platform");
+  res.send("Welcome to the Turner Quotation");
 });
 
 // API - 1 car name and year to car value
